@@ -1,0 +1,24 @@
+# Ignore everything by default
+*
+
+# ---- Allow required folders ----
+!model/
+!sim/
+!tools/
+!rl/
+
+# ---- Allow contents inside allowed folders ----
+!model/**
+!sim/**
+!tools/**
+!rl/**
+
+# ---- Ignore experiments inside rl ----
+rl/experiments/
+
+# ---- Python junk ----
+__pycache__/
+*.pyc
+
+# ---- Git files ----
+!.gitignore
