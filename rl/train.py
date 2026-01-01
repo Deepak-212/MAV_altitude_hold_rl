@@ -8,8 +8,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from rl.mav_env import MavAltitudeEnv
 
 
-timestamp = datetime.now().strftime("%d_%H-%M")
-experiment_name = f"{timestamp}_PPO_altitude_hold"
+timestamp = datetime.now().strftime("%d_%H")
+experiment_name = f"{timestamp}_PPO"
 base_dir = os.path.dirname(os.path.abspath(__file__))
 exp_dir = os.path.join(base_dir, "experiments", experiment_name)
 checkpoints_dir = os.path.join(exp_dir, "checkpoints")
@@ -31,7 +31,7 @@ checkpoint_callback = CheckpointCallback(
 model = PPO(
     policy='MlpPolicy',
     env=env,
-    learning_rate=2e-4,
+    learning_rate=3e-4,
     n_steps=2048,
     batch_size=64,
     n_epochs=10,
@@ -44,7 +44,7 @@ model = PPO(
 )
 
 # --- Training ---
-total_timesteps = 500_000
+total_timesteps = 1_000_000
 print(f"Training PPO for {total_timesteps} timesteps...")
 print(f"\nTraining in: {exp_dir}\n")
 model.learn(
