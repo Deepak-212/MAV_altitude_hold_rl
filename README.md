@@ -158,7 +158,7 @@ To prevent stall and enhance safety, a Control Barrier Function (CBF) is used as
 
 ### Safe Set Definition
 
-The safe set ( \mathcal{C} ) is defined by the barrier function:
+The safe set is defined by the barrier function:
 
 h(x) = V - V_min
 
